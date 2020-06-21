@@ -20,11 +20,11 @@ public class UbusClient {
 
     public UbusClient(String endpoint) {
         rpcClient = new UbusRpcClient(endpoint);
-        ubusSpec = new HashMap<>();
+        ubusSpec = new HashMap<String, UbusObject>();
     }
 
     public boolean check(String ubusObject, String ubusMethod, Map<String, Object> arguments) {
-        Set<String> allArgs = new HashSet<>();
+        Set<String> allArgs = new HashSet<String>();
 
         UbusObject object = ubusSpec.get(ubusObject);
 

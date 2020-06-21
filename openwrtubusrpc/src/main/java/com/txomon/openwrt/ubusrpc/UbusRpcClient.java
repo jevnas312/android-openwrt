@@ -44,7 +44,7 @@ public class UbusRpcClient implements UbusClientInterface {
     }
 
     public Object request(String method, String ubusObject, String ubusMethod, Map arguments) throws UbusRpcException {
-        ArrayList<Object> rpc_params = new ArrayList<>();
+        ArrayList<Object> rpc_params = new ArrayList<Object>();
         JSONRPC2Request request;
         JSONRPC2Response jsonRpcResponse;
         Object response;
@@ -56,7 +56,7 @@ public class UbusRpcClient implements UbusClientInterface {
         if (arguments != null)
             rpc_params.add(arguments);
         else
-            rpc_params.add(new HashMap<>());
+            rpc_params.add(new HashMap<Object, Object>());
 
         request = new JSONRPC2Request(method, rpc_params, 0);
         try {

@@ -14,17 +14,13 @@ import androidx.fragment.app.FragmentActivity;
 import com.txomon.openwrt.ubusrpc.UbusRpcException;
 import com.txomon.rx.Events;
 
-
-import com.txomon.rx.Events;
-/*
 import rx.Observable;
+import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
-*/
-
 
 public class CustomCallFragment extends Fragment {
     private static final String TAG = "CustomCallFragment";
@@ -87,7 +83,7 @@ public class CustomCallFragment extends Fragment {
                         return throwable instanceof UbusRpcException;
                     }
                 })
-                .subscribe(((UbusRpcFragmentInteractionListenerInterface) main).getCallResultObserver());
+                .subscribe((Observer<? super Object>) ((UbusRpcFragmentInteractionListenerInterface) main).getCallResultObserver());
         return view;
     }
 
