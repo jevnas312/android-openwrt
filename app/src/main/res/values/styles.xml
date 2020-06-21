@@ -1,0 +1,11 @@
+<resources>
+    <!-- Base application theme. -->
+    <style parent="android:Theme.Black.NoTitleBar" name="myNoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">#FF3F51B5</item>
+        <item name="android:colorPrimaryDark">#FF303F9F</item>
+        <item name="android:colorAccent">#FFFF4081</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>
